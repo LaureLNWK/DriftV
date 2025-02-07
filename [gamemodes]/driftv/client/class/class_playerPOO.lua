@@ -253,9 +253,9 @@ function player:currentVeh()
 end
 
 function player:SubmitDriftScore(score, multi)
-self.sessionDriftPoint = self.sessionDriftPoint + score
-TriggerServerEvent(Events.setDriftPoint, score)
-p:addExp(math.floor(score / 250))
+    self.sessionDriftPoint = self.sessionDriftPoint + score
+    TriggerServerEvent(Events.setDriftPoint, score)
+    p:addExp(math.floor(score / 10))
 end
 
 function player:GiveMoney(money)
