@@ -105,7 +105,6 @@ main.Closed = function()
     RageUI.Visible(main, false)
 end
 
-local LastCrewrankingTimer = GetGameTimer()
 
 function OpenMainMenu()
     if open then
@@ -116,12 +115,6 @@ function OpenMainMenu()
         open = true
         RageUI.Visible(main, true)
         StartLoopAnimation()
-
-        -- Refresh crew ranking every 1 minute
-        if LastCrewrankingTimer < GetGameTimer() then
-            LastCrewrankingTimer = GetGameTimer() + 60000
-            TriggerServerEvent("driftV:AskRefreshCrewRanking")
-        end
 
         Citizen.CreateThread(function()
             while open do

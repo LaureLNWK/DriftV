@@ -23,6 +23,7 @@ Events = {
     setDriftPoint =uuid() .."driftV:SubmitDriftPoint",
     raceEnd = uuid() .."drift:EndRace",
     raceData = uuid() .."drift:GetRaceData",
+    sellVeh = "drift:SellVehicle"
 }
 
 
