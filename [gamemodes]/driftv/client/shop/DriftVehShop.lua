@@ -60,7 +60,7 @@ local vehs = {
 
 local backToLobby = false
 local open = false
-local ownedVehicles = {}
+local ownedVehicles = {} -- Addition to show owned vehicles that you can sell.
 local selectedSub = {}
 local previewVeh = {
     entity = 0,
@@ -124,7 +124,7 @@ function OpenVehShopMenu(GoBackToLobby)
                             onSelected = function()
                                 selectedSub = k
                             end,
-                        }, sub)
+                        }, sub);
                     end
                 end)
 
@@ -187,7 +187,7 @@ function OpenVehShopMenu(GoBackToLobby)
                                     end)
                                 end
                             end
-                        }, sub)
+                        }, sub);
                     end
                 end)
 
