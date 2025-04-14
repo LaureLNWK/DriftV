@@ -16,7 +16,7 @@ function InitPlayer(source)
             succes = {},
             needSave = false,
             crew = "None",
-            crewOwner = false
+            crewOwner = false,
         }
         player[source] = data
         pCrew[source] = "None"
@@ -136,8 +136,8 @@ end)
 RegisterSecuredNetEvent(Events.setDriftPoint, function(point)
     local source = source
     player[source].driftPoint = player[source].driftPoint + point
-    player[source].money = math.floor(player[source].money + point / 80)
-    TriggerClientEvent("FeedM:showNotification", source, "+ ~g~"..tostring(math.floor(point / 80)).."~s~$", 2000, "success")
+    player[source].money = math.floor(player[source].money + point / 200)
+    TriggerClientEvent("FeedM:showNotification", source, "+ ~g~"..tostring(math.floor(point / 200)).."~s~$", 2000, "success")
     AddPointsToCrew(source, point)
 
     RefreshPlayerData(source)
@@ -196,7 +196,7 @@ AddEventHandler("drift:FetchVehicles", function()
 end)
 
 RegisterSecuredNetEvent(Events.buyVeh, function(price, label, model)
-    if price <= player[source].money and price > 0 then
+    if price <= player[source].money and price > 49000 then
         player[source].money = player[source].money - price
         table.insert(player[source].cars, {label = label, model = model, price = price, props = {}})
         TriggerClientEvent("FeedM:showNotification", source, "New vehicle added to your garage!", 5000, "success")
