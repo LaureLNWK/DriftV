@@ -40,10 +40,13 @@ AddEventHandler("driftV:RefreshData", function(data)
 end)
 
 RegisterNetEvent("driftV:RefreshOtherPlayerData")
-AddEventHandler("driftV:RefreshOtherPlayerData", function(crew, pCrews, king, ranking)
+AddEventHandler("driftV:RefreshOtherPlayerData", function(crew, pCrews, king)
     PlayersCrew = pCrews
     Crew = crew
     KingDriftCrew = king
+end)
+
+RegisterNetEvent("driftV:RefreshCrewRanking", function(ranking)
     CrewRanking = ranking
 end)
 
